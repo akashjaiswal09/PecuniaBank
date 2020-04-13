@@ -2,12 +2,13 @@ package com.cg.pb.bean;
 
 import java.time.LocalDate;
 
-public class Transaction {
+public class Passbook {
 	private long accNo;
 	private double amount;
 	private String type;
 	private double balance;
 	private LocalDate date;
+	
 	public long getAccNo() {
 		return accNo;
 	}
@@ -40,9 +41,10 @@ public class Transaction {
 	}
 	@Override
 	public String toString() {
-		return "Transaction [accNo=" + accNo + ", amount=" + amount + ", type=" + type + ", balance=" + balance
-				+ ", date=" + date + "]";
+		return "Passbook [accNo=" + accNo + ", amount=" + amount + ", type=" + type + ", balance=" + balance + ", date="
+				+ date + "]";
 	}
+	
 	
 	
 	
