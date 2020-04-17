@@ -11,32 +11,33 @@ public class Transaction {
 	public long getAccNo() {
 		return accNo;
 	}
-	public void setAccNo(long accNo) {
-		this.accNo = accNo;
+	public long setAccNo(long accNo) {
+		return this.accNo = accNo;
 	}
 	public double getAmount() {
 		return amount;
 	}
-	public void setAmount(double amount) {
-		this.amount = amount;
+	public double setAmount(double amount) {
+		return this.amount = amount;
+		
 	}
 	public String getType() {
 		return type;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public String setType(String type) {
+		return this.type = type;
 	}
 	public double getBalance() {
 		return balance;
 	}
-	public void setBalance(double balance) {
-		this.balance = balance;
+	public double setBalance(double balance) {
+		return this.balance = balance;
 	}
 	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(LocalDate date) {
-		this.date = date;
+	public LocalDate setDate(LocalDate date) {
+		return this.date = date;
 	}
 	@Override
 	public String toString() {

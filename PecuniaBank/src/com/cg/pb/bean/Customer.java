@@ -25,14 +25,14 @@ public class Customer {
 	public String getName() {
 		return name;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public String setName(String name) {
+		return this.name = name;
 	}
 	public long getContact() {
 		return contact;
 	}
-	public void setContact(long contact) {
-		this.contact = contact;
+	public long setContact(long contact) {
+		return this.contact = contact;
 	}
 	public long getAadhar() {
 		return aadhar;
@@ -43,8 +43,8 @@ public class Customer {
 	public String getDOB() {
 		return DOB;
 	}
-	public void setDOB(String dOB) {
-		DOB = dOB;
+	public String setDOB(String dOB) {
+		return DOB = dOB;
 	}
 	public String getPAN() {
 		return PAN;
@@ -55,8 +55,8 @@ public class Customer {
 	public String getGender() {
 		return gender;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public String setGender(String gender) {
+		return this.gender = gender;
 	}
 	public Address getAddress() {
 		return address;
@@ -67,7 +67,7 @@ public class Customer {
 	@Override
 	public String toString() {
 		return "Customer [name=" + name + ", contact=" + contact + ", aadhar=" + aadhar + ", DOB=" + DOB + ", PAN="
-				+ PAN + ", gender=" + gender + ", address=" + address + "]";
+				+ PAN + ", gender=" + gender + "]";
 	}
 	
 }

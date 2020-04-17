@@ -13,7 +13,7 @@ public class AccountDAOImpl implements AccountDAO {
 	public static HashMap<Long, Account> accListHash = new HashMap<Long, Account>();
 	Address address=new Address("0346c","buxipur","Gorakhpur","UttarPradesh","273001");
 	Customer customer = new Customer("Akash",965454966,1234, "09081997","BHTPJ6541E","Male", address);
-	Account a1= new Account("null",123,"null",10000,customer,address,1234);
+	Account a1= new Account(1234,123,"Savings",10000,customer,address);
 
 	@Override
 	public void addAccount() {

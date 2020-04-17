@@ -2,7 +2,7 @@ package com.cg.pb.utilities;
 
 public class Utilities {
 	public static boolean nameValidate(String name) {
-		String pattern = "[A-Za-z]{3,10}";
+		String pattern = "[A-Za-z\\s]{3,}";
 		if(name.matches(pattern))
 			return true;
 		return false;
