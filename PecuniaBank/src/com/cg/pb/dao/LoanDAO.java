@@ -1,11 +1,10 @@
 package com.cg.pb.dao;
 
+import com.cg.pb.bean.Loan;
+
 public interface LoanDAO {
 
-	public void createLoanRequest(long accNo, int loanId);
-
-	void addLoanDetails();
-
-	void loanDisburse(int creditScore, String loanStatus);
-
+	void createLoanRequest(Loan loan);
+	void loanDisburse(long accNo);
+	void getLoanDetail(long accNo);
 }

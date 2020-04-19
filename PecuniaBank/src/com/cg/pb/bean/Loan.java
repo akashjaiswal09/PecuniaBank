@@ -2,10 +2,10 @@ package com.cg.pb.bean;
 
 public class Loan {
 	long accNo;
-	double amount;
+	long amount;
 	int tenure;
 	int creditScore;
-	double roi;
+	int roi;
 	String loanType;
 	String loanStatus;
 
@@ -17,11 +17,11 @@ public class Loan {
 		return this.accNo = accNo;
 	}
 
-	public double getAmount() {
+	public long getAmount() {
 		return amount;
 	}
 
-	public double setAmount(double amount) {
+	public long setAmount(long amount) {
 		return this.amount = amount;
 	}
 
@@ -41,11 +41,11 @@ public class Loan {
 		return this.creditScore = creditScore;
 	}
 
-	public double getRoi() {
+	public int getRoi() {
 		return roi;
 	}
 
-	public double setRoi(double roi) {
+	public int setRoi(int roi) {
 		return this.roi = roi;
 	}
 
@@ -64,5 +64,12 @@ public class Loan {
 	public String setLoanStatus(String loanStatus) {
 		return this.loanStatus = loanStatus;
 	}
+
+	@Override
+	public String toString() {
+		return "Loan [accNo=" + accNo + ", amount=" + amount + ", tenure=" + tenure + ", creditScore=" + creditScore
+				+ ", roi=" + roi + ", loanType=" + loanType + ", loanStatus=" + loanStatus + "]";
+	}
+	
 
 }

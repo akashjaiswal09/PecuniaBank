@@ -59,9 +59,9 @@ public class LoanTesting {
 	
 	@Test
 	public void test7() {
-		long expected=(long) 8.5;
+		int expected=(int) 8.5;
 		Loan l= new Loan();
-		long actual = (long) l.setRoi(expected);
+		int actual = (int) l.setRoi(expected);
 		assertEquals(expected, actual);	
 	}
 }

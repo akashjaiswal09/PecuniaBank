@@ -9,6 +9,7 @@ import com.cg.pb.service.*;
 import com.cg.pb.validator.AccountValidator;
 import com.cg.pb.validator.AddressValidator;
 import com.cg.pb.validator.CustomerValidator;
+import com.cg.pb.validator.LoanValidator;
 import com.cg.pb.validator.TransactionValidator;
 import com.cg.pb.validator.Utilities;
 
@@ -23,6 +24,7 @@ public class BankDemo {
 		AccountServiceImpl asi = new AccountServiceImpl();
 		TransactionServiceImpl tsi = new TransactionServiceImpl();
 		PassbookServiceImpl psi = new PassbookServiceImpl();
+		LoanServiceImpl lsi = new LoanServiceImpl();
 
 		asi.addAccount();
 
@@ -607,11 +609,136 @@ public class BankDemo {
 							System.out.println(e);
 						}
 					}
-					
+
 					psi.accountSummary(Long.parseLong(accNo));
 					break;
 				case 4:
-					
+					Loan loan = new Loan();
+					String accNo1, loanType, loanStatus;
+					long amount;
+					int tenure, creditScore, roi;
+					while (true) {
+						System.out.println(
+								"1. for create loan request\n" + "2. for loan disbursal\n" + "3. for loan details");
+						int opt3 = scr.nextInt();
+						scr.nextLine();
+						switch (opt3) {
+						case 1:
+							while (true) {
+								System.out.println("Enter the Account No.");
+								accNo1 = scr.next();
+								try {
+									LoanValidator.isValidAccNo(accNo1);
+									break;
+								} catch (isValidAccNoException e) {
+									System.out.println(e);
+								}
+							}
+							while (true) {
+								System.out.println("Enter Loan Amount");
+								amount = scr.nextLong();
+								try {
+									LoanValidator.isValidAmount(amount);
+									break;
+								} catch (isValidAmountException e) {
+									System.out.println(e);
+								}
+							}
+							while (true) {
+								System.out.println("Enter the Tenure");
+								tenure = scr.nextInt();
+								try {
+									LoanValidator.isValidTenure(tenure);
+									break;
+								} catch (isValidTenureException e) {
+									System.out.println(e);
+								}
+							}
+							while (true) {
+								System.out.println("Enter Credit scrore");
+								creditScore = scr.nextInt();
+								try {
+									LoanValidator.isValidCreditScore(creditScore);
+									break;
+								} catch (isValidCreditScoreException e) {
+									System.out.println(e);
+								}
+							}
+							while (true) {
+								System.out.println("Ente rate of interest");
+								roi = scr.nextInt();
+								try {
+									LoanValidator.isValidRoi(roi);
+									break;
+								} catch (isValidRoiException e) {
+									System.out.println(e);
+								}
+							}
+							while (true) {
+								System.out.println("Enter the loan type");
+								loanType = scr.next();
+								try {
+									LoanValidator.isValidLoanType(loanType);
+									break;
+								} catch (isValidLoanTypeException e) {
+									System.out.println(e);
+								}
+							}
+							while (true) {
+								System.out.println("Enter the loan status");
+								loanStatus = scr.next();
+								try {
+									LoanValidator.isValidLoanStatus(loanStatus);
+									break;
+								} catch (isValidLoanStatusException e) {
+									System.out.println(e);
+								}
+							}
+
+							loan.setAccNo(Long.parseLong(accNo1));
+							loan.setAmount(amount);
+							loan.setTenure(tenure);
+							loan.setCreditScore(creditScore);
+							loan.setRoi(roi);
+							loan.setLoanType(loanType);
+							loan.setLoanStatus(loanStatus);
+							lsi.createLoanRequest(loan);
+							System.out.println("Loan Request Created Successfully");
+							break;
+						case 2:
+							while (true) {
+								System.out.println("Enter the Account Number");
+								accNo1 = scr.nextLine();
+								try {
+									LoanValidator.isValidAccNo(accNo1);
+									break;
+								} catch (isValidAccNoException e) {
+									System.out.println(e);
+								}
+							}
+
+							lsi.loanDisburse(Long.parseLong(accNo1));
+							break;
+						case 3:
+							while (true) {
+								System.out.println("Enter the Account Number");
+								accNo1 = scr.nextLine();
+								try {
+									LoanValidator.isValidAccNo(accNo1);
+									break;
+								} catch (isValidAccNoException e) {
+									System.out.println(e);
+								}
+							}
+							lsi.getLoanDetail(Long.parseLong(accNo1));
+							break;
+						default:
+							System.out.println("Choose Appropriate Value");
+							break;
+						}
+						break;
+					}
+					break;
 				default:
 					System.out.println("Choose appropiate value");
 					break;
@@ -620,11 +747,7 @@ public class BankDemo {
 
 			}
 		} else
-
-		{
 			System.out.println("Enter correct User Name and Password..!");
-
-		}
 	}
 
 }
