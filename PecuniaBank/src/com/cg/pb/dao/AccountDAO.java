@@ -10,7 +10,7 @@ import com.cg.pb.bean.Customer;
 public interface AccountDAO {
 	void addAccount();
 	void addAccount(Account account,Customer customer,Address address) throws Exception;
-	void udpateAccount();
+	void udpateAccount(Account account);
 	void fetchAccount(long accNo);
 	void deleteAccount(long accNo);
 	HashMap<Long, Account> getaccListHash();

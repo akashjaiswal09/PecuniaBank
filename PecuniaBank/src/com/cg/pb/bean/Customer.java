@@ -26,7 +26,7 @@ public class Customer {
 		return name;
 	}
 	public String setName(String name) {
-		return this.name = name;
+		return this.name=name;
 	}
 	public long getContact() {
 		return contact;

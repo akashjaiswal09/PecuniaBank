@@ -11,9 +11,7 @@ import com.cg.pb.dao.TransactionDAOImpl;
 
 public class TransactionServiceImpl implements TransactionService {
 
-//	AccountDAOImpl adi = new AccountDAOImpl();
-//	HashMap<Long, Account> accListHash = adi.getaccListHash();
-//	ArrayList<Account> accList = adi.getaccList();
+
 	TransactionDAOImpl dao = new TransactionDAOImpl();
 
 	@Override

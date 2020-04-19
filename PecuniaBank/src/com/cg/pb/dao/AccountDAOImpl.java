@@ -30,8 +30,7 @@ public class AccountDAOImpl implements AccountDAO {
 	}
 
 	@Override
-	public void udpateAccount() {
-		// TODO Auto-generated method stub
+	public void udpateAccount(Account account) {
 
 	}
 

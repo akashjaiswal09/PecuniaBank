@@ -1,4 +1,4 @@
-package com.cg.pb.utilities;
+package com.cg.pb.validator;
 
 public class Utilities {
 	public static boolean nameValidate(String name) {

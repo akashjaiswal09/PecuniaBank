@@ -1,18 +1,20 @@
 package com.cg.pb.service;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.cg.pb.bean.Account;
 import com.cg.pb.bean.Address;
 import com.cg.pb.bean.Customer;
 import com.cg.pb.dao.AccountDAOImpl;
+import com.cg.pb.validator.AccountValidator;
+import com.cg.pb.validator.AddressValidator;
+import com.cg.pb.validator.CustomerValidator;
 
 public class AccountServiceImpl implements AccountService {
 
-//	ArrayList<Account> accList = new ArrayList<Account>();
-//	HashMap<Long, Account> accListHash = new HashMap<Long, Account>();
-
+	AccountValidator validator = new AccountValidator();
+	CustomerValidator validator1 = new CustomerValidator();
+	AddressValidator validator2 = new AddressValidator();
 	AccountDAOImpl dao = new AccountDAOImpl();
 
 	@Override
@@ -21,13 +23,10 @@ public class AccountServiceImpl implements AccountService {
 	}
 	@Override
 	public void addAccount(Account account, Customer customer, Address address) throws Exception {
+		validator.validate(account);
+		validator1.validate(customer);
+		validator2.validate(address);
 		dao.addAccount(account, customer, address);
-	}
-
-	@Override
-	public void udpateAccount() {
-		dao.udpateAccount();
-
 	}
 
 	@Override
